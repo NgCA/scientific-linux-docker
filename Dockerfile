@@ -12,7 +12,6 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 #host keys are not automatically generated so do it manually
 RUN ssh-keygen -A
-RUN rsyslogd
 
 EXPOSE 22
-CMD /usr/sbin/sshd && bash
+CMD /usr/sbin/sshd && ryslogd && bash
